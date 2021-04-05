@@ -4,9 +4,7 @@
     <v-card class="mx-auto mt-10" max-width="500" outlined  elevation="5">
       <v-card-title>Booking Form</v-card-title>
          <v-card-subtitile></v-card-subtitile>
-      <v-divider
-
-      ></v-divider>
+      <v-divider></v-divider>
       <v-card-text>
         <v-form>
         <v-row>
