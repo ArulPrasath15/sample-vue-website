@@ -13,17 +13,13 @@
     </v-app-bar>
 
     <v-main>
-      <BookTicket/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import BookTicket from "@/components/BookTicket";
 export default {
   name: 'App',
-  components: {
-    BookTicket,
-  },
 };
 </script>
