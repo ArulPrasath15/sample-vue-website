@@ -14,14 +14,17 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Students(ea0ed98b-7c93-4c45-b819-916c42b7f553)'
-    appType: 'webAppLinux'
-    WebAppName: 'PentaInvoice'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students (ea0ed98b-7c93-4c45-b819-916c42b7f553)'
+    appType: 'webAppLinux'
+    WebAppName: 'PentaInvoice'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'Test_group'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
