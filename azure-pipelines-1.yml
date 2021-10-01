@@ -7,9 +7,20 @@ pool:
 steps:
   - checkout: self
     submodules: true
+  - task: NodeTool@0
+    displayName: 'Install Node.js'
+    inputs:
+      versionSpec: '10.x'
+
+  - script: |
+      npm install
+      npm run build
+    displayName: 'npm install and build'
+    workingDirectory: $(Build.SourcesDirectory)/Solutions/WebApp
   - task: AzureStaticWebApp@0
     inputs:
-      app_location: '/src'
-      api_location: 'api'
-      output_location: '/dist'
+      app_location: 'Solutions/WebApp/dist'
+      api_location: ''
+      output_location: ''
+    env:
       azure_static_web_apps_api_token: $(deployment_token)
