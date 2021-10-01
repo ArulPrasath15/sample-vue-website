@@ -6,7 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
-        <h2>Red Bus</h2>
+        <h2>RedBus</h2>
       </div>
 
 
